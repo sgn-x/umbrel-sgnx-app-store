@@ -7,21 +7,22 @@ category: Development
 version: "1.0.0"
 port: 4000
 description: >-
-  qBittorrent + Wireguard
+  Docker container which runs qBittorrent-nox (headless) version 5.1.0 client while connecting to WireGuard with iptables killswitch to prevent IP leakage when the tunnel goes down.
 
 developer: tenseiken
-website: https://umbrel.com
-submitter: Umbrel
-submission: https://github.com/getumbrel/umbrel-hello-world-app
-repo: https://github.com/getumbrel/umbrel-hello-world-app
-support: https://github.com/getumbrel/umbrel-hello-world-app/issues
+website: https://github.com/tenseiken/docker-qbittorrent-wireguard
+submitter: sgnx
+submission: https://github.com/tenseiken/docker-qbittorrent-wireguard
+repo: https://github.com/tenseiken/docker-qbittorrent-wireguard
+support: https://github.com/tenseiken/docker-qbittorrent-wireguard
 gallery:
-  - https://i.imgur.com/yyVG0Jb.jpeg
-  - https://i.imgur.com/yyVG0Jb.jpeg
-  - https://i.imgur.com/yyVG0Jb.jpeg
+
 releaseNotes: >-
-  Add what's new in the latest version of your app here.
-dependencies: []
+  xx
+port: 8094
 path: ""
-defaultUsername: ""
-defaultPassword: ""
+defaultUsername: "admin"
+defaultPassword: "adminadmin"
+torOnly: false
+permissions:
+  - STORAGE_DOWNLOADS
