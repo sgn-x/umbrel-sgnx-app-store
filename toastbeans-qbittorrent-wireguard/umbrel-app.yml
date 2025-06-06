@@ -20,7 +20,7 @@ gallery:
   - https://i.imgur.com/yyVG0Jb.jpeg
 releaseNotes: >-
   xx
-port: 8094
+port: 8095
 path: ""
 defaultUsername: "admin"
 defaultPassword: "adminadmin"
