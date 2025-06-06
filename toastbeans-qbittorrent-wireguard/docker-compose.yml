@@ -1,14 +1,33 @@
 version: "3.7"
 
 services:
-
   app_proxy:
     environment:
-      # The format here is: <app-id>_<docker-service-name>_1
-      APP_HOST: sparkles-hello-world_server_1
-      APP_PORT: 3000
-    
-  server:
-    image: getumbrel/community-app-store-hello-world:latest
-    user: "1000:1000"
-    init: true
+      APP_HOST: qbittorrent-wireguard_server_1
+      APP_PORT: 8080
+      PROXY_AUTH_ADD: "false"
+
+server:
+  image: tenseiken/qbittorrent-wireguard:latest
+  ports:
+    - “8080:8080“
+  environment:
+    - ENABLEPROTONVPNPORTFWD=1
+    - LAN_NETWORK=192.168.1.0/24
+    - PGID=1000
+    - PUID=1000
+    - QBT_LEGAL_NOTICE=confirm
+    - WEBUI_PASS=adminadmin
+    - WEBUI_URL=8080
+    - WEBUI_USER=admin
+    # - UMASK=002
+  volumes:
+    - ${APP_DATA_DIR}/data/config:/config
+    # /app/qBittorrent/downloads is the default path set in qBittorrent
+    - ${UMBREL_ROOT}/data/storage/downloads:/app/qBittorrent/downloads
+  cap_add:
+    - NET_ADMIN
+  sysctls:
+    - net.ipv4.conf.all.rp_filter=2
+    - net.ipv4.conf.all.src_valid_mark=1
+  restart: always
