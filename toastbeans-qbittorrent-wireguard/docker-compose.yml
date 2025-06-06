@@ -10,9 +10,9 @@ services:
 server:
   image: tenseiken/qbittorrent-wireguard:latest
   ports:
-    - “8080:8080“
+    - “8080:8080/tcp“
   environment:
-    - LAN_NETWORK=192.168.1.0/24
+    - LAN_NETWORK=192.168.1.0/24,10.21.0.0./24
     - PGID=1000
     - PUID=1000
     - QBT_LEGAL_NOTICE=confirm
