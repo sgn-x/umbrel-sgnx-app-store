@@ -1,0 +1,25 @@
+manifestVersion: 1
+id: toastbeans-gluetun
+name: gluetun
+tagline: gluetun
+icon: 
+category: Development
+version: "1.0.0"
+description: >-
+   Lightweight swiss-army-knife-like VPN client to multiple VPN service providers
+
+developer: qdm12
+website: https://github.com/qdm12/gluetun
+submitter: sgnx
+submission: https://github.com/qdm12/gluetun
+repo: https://github.com/qdm12/gluetun
+support: https://github.com/qdm12/gluetun
+gallery:
+  - https://i.imgur.com/yyVG0Jb.jpeg
+  - https://i.imgur.com/yyVG0Jb.jpeg
+  - https://i.imgur.com/yyVG0Jb.jpeg
+releaseNotes: >-
+  xx
+port:
+path: "8888"
+torOnly: false
